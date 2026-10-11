@@ -1,0 +1,156 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+  />
+
+  <meta name="theme-color" content="#000000" />
+  <meta
+    name="description"
+    content="A minimal neon-orange Snake game. Swipe to play."
+  />
+
+  <link rel="manifest" href="/manifest.json" />
+  <link rel="icon" type="image/svg+xml" href="/icons/snake.svg" />
+
+  <title>Neon Snake</title>
+</head>
+
+<body>
+  <main class="app">
+
+    <!-- Header -->
+    <header class="topbar">
+      <a class="brand" href="./" aria-label="Neon Snake home">
+        <span class="brand-mark">⌁</span>
+        <span>snake<span class="brand-dot">.</span></span>
+      </a>
+    </header>
+
+    <!-- Game heading -->
+    <section class="game-shell">
+
+      <div class="game-heading">
+        <p class="eyebrow">A LITTLE ARCADE</p>
+        <h1>Neon Snake<span>.</span></h1>
+        <p class="subtitle">Eat. Grow. Don't crash.</p>
+      </div>
+
+      <!-- Game board -->
+      <div class="board-wrap" id="boardWrap">
+
+        <canvas
+          id="gameCanvas"
+          aria-label="Snake game board"
+          role="img"
+        ></canvas>
+
+        <!-- Start screen -->
+        <div id="startOverlay" class="overlay">
+          <div class="overlay-card">
+
+            <div class="snake-symbol" aria-hidden="true">
+              <span></span>
+              <span></span>
+              <span></span>
+              <i></i>
+            </div>
+
+            <h2>Ready to play?</h2>
+
+            <p>
+              Swipe anywhere on the board
+              to steer your snake.
+            </p>
+
+            <button
+              id="startButton"
+              class="primary-button"
+              type="button"
+            >
+              Start playing <span>↗</span>
+            </button>
+
+          </div>
+        </div>
+
+        <!-- Game over screen -->
+        <div id="gameOverOverlay" class="overlay hidden">
+          <div class="overlay-card">
+
+            <div class="gameover-symbol">×</div>
+
+            <p class="eyebrow">THAT'S A WRAP</p>
+
+            <h2>Game over</h2>
+
+            <p>Every crash is another chance.</p>
+
+            <button
+              id="restartButton"
+              class="primary-button"
+              type="button"
+            >
+              Play again <span>↻</span>
+            </button>
+
+          </div>
+        </div>
+
+        <!-- Pause screen -->
+        <div id="pauseOverlay" class="overlay hidden">
+          <div class="overlay-card">
+
+            <div class="pause-symbol">Ⅱ</div>
+
+            <h2>Paused</h2>
+
+            <p>Take your time.</p>
+
+            <button
+              id="resumeButton"
+              class="primary-button"
+              type="button"
+            >
+              Resume <span>▶</span>
+            </button>
+
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Minimal controls -->
+      <div class="game-footer">
+        <div class="hint">
+          <span class="hint-dot"></span>
+          <span id="hintText">Swipe to move</span>
+        </div>
+
+        <button
+          id="pauseButton"
+          class="text-button"
+          type="button"
+          disabled
+        >
+          <span>Ⅱ</span> Pause
+        </button>
+      </div>
+
+    </section>
+
+    <!-- Footer -->
+    <footer class="bottom-note">
+      <span class="key-hint">↑ ↓ ← →</span>
+      <span>Swipe to steer · No buttons needed</span>
+    </footer>
+
+  </main>
+
+  <script type="module" src="/src/main.js"></script>
+</body>
+</html>
